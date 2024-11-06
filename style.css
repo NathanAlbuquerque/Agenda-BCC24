@@ -76,6 +76,80 @@
   color: #982B1C;
 }
 
+.modals {
+}
+
+.modals .modal-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  place-content: center;
+  z-index: 2;
+  background-color: #0000;
+  transition: .5s ease;
+}
+
+.modals .modal-bg.active {
+  display: block;
+  animation: modalBgShow .3s forwards;
+}
+
+.modals .modal-bg.deactive {
+  display: none;
+  animation: modalBgHide .3s;
+}
+
+@keyframes modalBgShow {
+  100% {
+    background-color: #0005;
+  }
+}
+
+@keyframes modalBgHide {
+  0% {
+    background-color: #0005;
+  }
+  100% {
+    background-color: #000;
+  }
+}
+
+.modals .modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-3);
+  border-radius: 10px;
+  padding: 15px 20px;
+  z-index: 3;
+  display: none;
+}
+
+.modals .modal.active {
+  display: block;
+}
+
+.modals .modal .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modals .modal .modal-close {
+  color: red;
+  font-weight: 600;
+  font-size: 24px;
+  transition: .2s ease-out;
+}
+
+.modals .modal .modal-close:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
 .footer {
   width: 100%;
   height: 30px;
